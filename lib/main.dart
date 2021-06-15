@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_midi_command/flutter_midi_command.dart';
+import 'package:provider/provider.dart';
+import 'package:pruebas_finales_midi/provider/canal_info.dart';
+import 'package:pruebas_finales_midi/tabs/tab_dos.dart';
+import 'package:pruebas_finales_midi/tabs/tab_tres.dart';
+import 'package:pruebas_finales_midi/tabs/tab_uno.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,34 +13,40 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Midi Ultimas pruebas'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => CanalInfo()),
+      ],
+      child: MaterialApp(
+        title: 'Midi Ultimas pruebas',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
         ),
-        body: Container());
+        home: DefaultTabController(
+            initialIndex: 0,
+            length: 3,
+            child: Scaffold(
+              appBar: AppBar(
+                title: Text('Midi Ultimas pruebas'),
+                bottom: TabBar(
+                  tabs: [
+                    Tab(
+                      icon: Icon(Icons.ac_unit),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.ac_unit),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.ac_unit),
+                    )
+                  ],
+                ),
+              ),
+              body: TabBarView(
+                children: [TabUno(), TabDos(), TabTres()],
+              ),
+            )),
+      ),
+    );
   }
 }

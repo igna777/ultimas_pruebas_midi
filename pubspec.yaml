@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_midi_command: ^0.3.7
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -46,9 +47,24 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+   - assets/Drums/Part Selector/03Part Select 01.png
+   - assets/Drums/Part Selector/03Part Select 02.png
+   - assets/Drums/Part Selector/03Part Select 03.png
+   - assets/Drums/Part Selector/03Part Select 04.png
+   - assets/Drums/Part Selector/03Part Select 05.png
+   - assets/Drums/Part Selector/03Part Select 06.png
+   - assets/Drums/Part Selector/03Part Select 07.png
+   - assets/Drums/Part Selector/03Part Select 08.png
+   - assets/Drums/Part Selector/03Part Select 09.png
+   - assets/Drums/Part Selector/03Part Select 10.png
+   - assets/Mixer/PlayStop/06 Pad Play Pulsado.png
+   - assets/Mixer/PlayStop/06 Pad Play Sin pulsar.png
+   - assets/Mixer/PlayStop/06 Pad Stop Pulsado.png
+   - assets/Mixer/PlayStop/06 Pad Stop Sin pulsar.png
+   - assets/Pads/Botones/06 Pad Central Pulsado.png
+   - assets/Pads/Botones/06 Pad Central Sin Pulsar.png
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
